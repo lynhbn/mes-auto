@@ -1,0 +1,4 @@
+username,password,loginStatus
+admin,123456,false
+user1,wrongpass,false
+student,Password123,true
