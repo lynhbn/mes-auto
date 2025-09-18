@@ -15,8 +15,9 @@ public class BaseTest {
     @BeforeClass
     public void suiteSetup() {
         String env = System.getProperty("env", "dev"); // default = dev
+        boolean headless = Boolean.parseBoolean(System.getProperty("headless", "false")); // default = false
         ConfigReader.loadProperties(env);
-        driver = DriverFactory.getDriver();
+        driver = DriverFactory.getDriver(headless);
         TestListener.setDriver(driver);
         baseUrl = ConfigReader.getProperty("baseUrl");
     }
