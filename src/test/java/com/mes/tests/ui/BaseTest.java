@@ -1,4 +1,4 @@
-package com.mes.tests;
+package com.mes.tests.ui;
 
 import com.mes.listeners.TestListener;
 import io.qameta.allure.testng.AllureTestNg;

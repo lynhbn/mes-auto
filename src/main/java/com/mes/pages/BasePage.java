@@ -13,9 +13,16 @@ public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
 
+    public NavBar getNavBar() {
+        return navBar;
+    }
+
+    protected NavBar navBar;
+
     public BasePage(WebDriver driver) {
         this.driver = driver;
         this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.navBar = new NavBar(driver);
     }
 
     protected WebElement waitForVisibility(By locator) {

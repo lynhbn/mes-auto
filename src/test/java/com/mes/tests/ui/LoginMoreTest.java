@@ -1,4 +1,4 @@
-package com.mes.tests;
+package com.mes.tests.ui;
 import com.mes.pages.LoginPage;
 import com.mes.utils.TestDataReader;
 import org.testng.Assert;
@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.Iterator;
 
 
-public class LoginTest extends BaseTest {
+public class LoginMoreTest extends BaseTest {
 
     @DataProvider(name = "loginDataFromFile")
     public Iterator<Object[]> getLoginData() throws IOException {
@@ -28,10 +28,9 @@ public class LoginTest extends BaseTest {
     @Test(description = "Verify user can login successfully with fixed data", groups = {"smoke", "login"})
     public void testSimpleLogin()  {
         driver.get(baseUrl + "/practice-test-login/");
-
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterUsername("student");
-        loginPage.enterPassword("Password1234");
+        loginPage.enterPassword("Password123");
         loginPage.clickLogin();
         loginPage.sleep(3);
         String actualUrl = loginPage.getCurrentUrl();
@@ -42,7 +41,6 @@ public class LoginTest extends BaseTest {
             groups = {"smoke", "login"})
     public void testLoginWithOnScreenData(String username, String password, boolean loginStatus) {
         driver.get(baseUrl + "/practice-test-login/");
-
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
@@ -62,7 +60,6 @@ public class LoginTest extends BaseTest {
             groups = {"smoke", "login"})
     public void testLoginWithFileData(String username, String password, boolean loginStatus) {
         driver.get(baseUrl + "/practice-test-login/");
-
         LoginPage loginPage = new LoginPage(driver);
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);

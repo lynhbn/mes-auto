@@ -2,7 +2,7 @@
 <suite name="SeleniumPOMSuite">
     <test name="LoginTests">
         <classes>
-            <class name="com.mes.tests.LoginTest"/>
+            <class name="com.mes.tests.ui.LoginTest"/>
         </classes>
     </test>
 </suite>
